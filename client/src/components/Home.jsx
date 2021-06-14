@@ -1,10 +1,13 @@
 import React from "react";
+
 import Grid from "@material-ui/core/Grid";
+
+import HomeHeader from "./HomeHeader";
 
 function Home() {
   return (
     <Grid style={{ height: "100vh" }}>
-      <h1>hello from app</h1>
+      <HomeHeader />
     </Grid>
   );
 }

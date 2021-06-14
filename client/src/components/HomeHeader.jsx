@@ -87,7 +87,7 @@ function HomeHeader() {
           gutterBottom
           style={{ marginTop: "10px" }}
         >
-          {Date().substring(0, 25)}
+          {Date().substring(0, 21)}
         </Typography>
         <IconButton style={{ marginLeft: "1rem" }} onClick={handleHelpMenu}>
           <HelpOutlineIcon />
@@ -110,7 +110,7 @@ function HomeHeader() {
         <IconButton style={{ marginRight: "10px" }}>
           <AppsRoundedIcon />
         </IconButton>
-        <Avatar style={{ height: 50, width: 50 }} />
+        <Avatar />
       </Grid>
     </Grid>
   );

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SendFeedbackDialog from "./SendFeedbackDialog";
 import SettingsDialog from "./SettingsDialog";
 import HelpMenu from "./HelpMenu";
+import AppMenu from "./AppMenu";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -46,6 +47,7 @@ function HomeHeader() {
   const [openSendFeedback, setOpenSendFeedback] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [helpMenuOpen, setHelpMenuOpen] = useState(null);
+  const [appsOpen, setAppsOpen] = useState(null);
   const classes = useStyles();
 
   const handleSendFeedbackOpen = () => {
@@ -70,6 +72,14 @@ function HomeHeader() {
 
   const handleHelpMenuClose = () => {
     setHelpMenuOpen(null);
+  };
+
+  const handleAppsOpen = (event) => {
+    setAppsOpen(event.currentTarget);
+  };
+
+  const handleAppsClose = () => {
+    setAppsOpen(null);
   };
 
   return (
@@ -109,9 +119,10 @@ function HomeHeader() {
           <SettingsIcon />
         </IconButton>
         <SettingsDialog open={settingsOpen} handleClose={handleSettingsClose} />
-        <IconButton style={{ marginRight: "10px" }}>
+        <IconButton style={{ marginRight: "10px" }} onClick={handleAppsOpen}>
           <AppsRoundedIcon />
         </IconButton>
+        <AppMenu anchorEl={appsOpen} handleClose={handleAppsClose} />
         <Avatar style={{ height: "35px", width: "35px" }} />
       </Grid>
     </Grid>

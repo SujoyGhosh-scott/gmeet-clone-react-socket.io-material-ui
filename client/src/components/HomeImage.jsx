@@ -18,7 +18,7 @@ const imgText = [
   {
     title: "Get a link that you can share",
     subtitle:
-      "click New meeting to get a link that you can send to people that you want to meet with",
+      "Click New meeting to get a link that you can send to people that you want to meet with",
   },
   {
     title: "See everyone together",

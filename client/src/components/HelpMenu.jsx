@@ -6,7 +6,6 @@ import MenuItem from "@material-ui/core/MenuItem";
 
 const useStyles = makeStyles((theme) => ({
   menuItem: {
-    fontSize: "large",
     padding: "10px 30px",
     width: "220px",
   },

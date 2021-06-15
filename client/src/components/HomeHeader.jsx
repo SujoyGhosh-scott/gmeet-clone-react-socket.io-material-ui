@@ -16,7 +16,7 @@ import AppsRoundedIcon from "@material-ui/icons/AppsRounded";
 const useStyles = makeStyles({
   root: {
     margin: "0 10px",
-    padding: "1.2rem",
+    padding: ".8rem",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
@@ -24,15 +24,17 @@ const useStyles = makeStyles({
   },
   iconSection: {
     display: "flex",
+    alignItems: "center",
   },
   logo: {
-    width: 150,
+    width: 140,
     objectFit: "contain",
   },
   logoText: {
-    fontSize: "28px",
-    marginLeft: "10px",
-    marginTop: "3px",
+    marginLeft: "5px",
+    fontSize: "x-large",
+    color: "#3f484a",
+    marginBottom: "7px",
   },
   headerOptions: {
     display: "flex",
@@ -85,7 +87,7 @@ function HomeHeader() {
           variant="h5"
           component="p"
           gutterBottom
-          style={{ marginTop: "10px" }}
+          style={{ marginTop: "5px", fontSize: "large" }}
         >
           {Date().substring(0, 21)}
         </Typography>
@@ -110,7 +112,7 @@ function HomeHeader() {
         <IconButton style={{ marginRight: "10px" }}>
           <AppsRoundedIcon />
         </IconButton>
-        <Avatar />
+        <Avatar style={{ height: "35px", width: "35px" }} />
       </Grid>
     </Grid>
   );

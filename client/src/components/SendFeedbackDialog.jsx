@@ -2,6 +2,7 @@ import React from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Dialog from "@material-ui/core/Dialog";
+import Grid from "@material-ui/core/Grid";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
@@ -16,7 +17,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 const useStyles = makeStyles((theme) => ({
   appBar: {
     position: "relative",
-    background: "#62809e",
+    background: "#546E7A",
   },
   title: {
     marginLeft: theme.spacing(2),
@@ -26,29 +27,24 @@ const useStyles = makeStyles((theme) => ({
     border: "1px solid white",
     borderRadius: "12px",
   },
-  dialogContent: {},
-  textarea: {
-    marginTop: "1rem",
-    height: "450px",
-    outlineWidth: 0,
-    width: "100%",
-    fontSize: "1.3rem",
-    fontFamily: "sans-serif",
-    border: "none",
-  },
-  checkbox: {
-    marginTop: "1rem",
-    marginLeft: "10px",
-    marginBottom: "1rem",
-  },
-  terms: {
-    bottom: "0",
-    position: "absolute",
-    marginBottom: "1rem",
-    marginRight: "1rem",
-  },
   light: {
-    color: "#3d91ff",
+    color: "#0fa3e2",
+    cursor: "pointer",
+    textTransform: "capitalize",
+  },
+  bottomText: {
+    color: "gray",
+    bottom: 0,
+    position: "absolute",
+  },
+  textarea: {
+    height: 400,
+    marginBottom: "1rem",
+    border: "none",
+    fontSize: 18,
+    fontFamily: "sans-serif",
+    outlineWidth: 0,
+    marginTop: 10,
   },
 }));
 
@@ -94,28 +90,33 @@ function SendFeedbackDialog({ open, handleClose }) {
           </IconButton>
         </Toolbar>
       </AppBar>
-      <DialogContent className={classes.dialogContent}>
-        <textarea
-          className={classes.textarea}
-          placeholder="Have feedback? We'd love to hear it, but please don't share sensitive information. Have question? Try help or support."
-        />
-        <FormControlLabel
-          className={classes.checkbox}
-          control={<Checkbox name="checkedB" color="primary" />}
-          label="Include screenshot"
-        />
-        <Typography variant="body1" gutterBottom className={classes.terms}>
-          Go to the <span className={classes.light}>Legal Help page</span> to
-          request content changes for legal reasons. Some
-          <span className={classes.light}>
-            {" "}
-            account and system information{" "}
-          </span>
-          may be sent to Google. We will use the information that you give us to
-          help address technical issues and to improve our services, subject to
-          our <span className={classes.light}>Privacy Policy</span> and
-          <span className={classes.light}> Terms of Service</span>.
-        </Typography>
+      <DialogContent>
+        <Grid container direction="column" style={{ height: "100%" }}>
+          <textarea
+            className={classes.textarea}
+            placeholder="Have feedback? We'd love to hear it, but please don't share sensitive information. Have question? Try help or support."
+          />
+          <FormControlLabel
+            control={<Checkbox name="checkedB" color="primary" />}
+            label="Include screenshot"
+          />
+          <Typography
+            variant="caption"
+            display="block"
+            gutterBottom
+            className={classes.bottomText}
+          >
+            Go to the <span className={classes.light}>Legal Help Page</span> to
+            request contact changes for legal reasons. Some Legal Help Page{" "}
+            <span className={classes.light}>
+              account and system information
+            </span>{" "}
+            may be sent to Google. we will use the information that you give us
+            to help adress technical issues and to improve our services, subject
+            to our <span className={classes.light}> privacy policy</span> and{" "}
+            <span className={classes.light}>terms and service</span>.
+          </Typography>
+        </Grid>
       </DialogContent>
     </Dialog>
   );

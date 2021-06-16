@@ -44,6 +44,21 @@ const useStyles = makeStyles(() => ({
   imageText: {
     width: "24rem",
   },
+  dots: {
+    width: 55,
+    display: "flex",
+    justifyContent: "space-between",
+    marginTop: ".3rem",
+  },
+  dot: {
+    width: 6,
+    height: 6,
+    borderRadius: "50%",
+    background: "rgba(160, 215, 236, 0.459)",
+  },
+  selectedDot: {
+    background: "#0e63c4",
+  },
 }));
 
 function HomeImage() {
@@ -114,7 +129,13 @@ function HomeImage() {
         >
           {imgText[currImg].subtitle}
         </Typography>
-        <Grid></Grid>
+      </Grid>
+      <Grid className={classes.dots}>
+        {[0, 1, 2, 3].map((n, i) => (
+          <div
+            className={`${classes.dot} ${currImg === i && classes.selectedDot}`}
+          ></div>
+        ))}
       </Grid>
     </Grid>
   );

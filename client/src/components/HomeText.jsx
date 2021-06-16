@@ -28,6 +28,7 @@ const useStyles = makeStyles(() => ({
     color: "white",
     fontFamily: "sans-serif",
     marginRight: "2rem",
+    textTransform: "none",
   },
   learnMore: {
     color: "gray",

@@ -20,6 +20,7 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     flexDirection: "column",
     textAlign: "center",
+    cursor: "pointer",
     borderRadius: 5,
     "&:hover": {
       background: "rgba(160, 215, 236, 0.459)",
